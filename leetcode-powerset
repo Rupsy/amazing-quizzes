@@ -1,0 +1,24 @@
+https://leetcode.com/problems/subsets/
+
+Solution : import math
+
+a= "ABCD"
+l = len(a)
+limit = math.pow(2,l)
+print(limit)
+def convert_binary(num):
+    ans = ""
+    while num > 0 :
+        print ( "ans", ans )
+        ans = ans + str(num%2)
+        print ( "ans2", ans )
+        print ( "num", num%2 )
+        num = num/2
+        print ( "num", num%2 )
+    print ( "ans2", ans )   
+
+
+#for i in range(int(limit)):
+print (convert_binary(2))
+
+

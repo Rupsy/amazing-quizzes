@@ -1,0 +1,28 @@
+Problem : https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] 
+that do not appear in nums.
+
+Input: nums = [4,3,2,7,8,2,3,1]
+Output: [5,6]
+
+
+Solution: 
+
+nums = [4,3,2,7,8,2,3,1]
+l = len(nums)
+nums_l = list()
+max = 0
+for i in range (l):
+    if nums[i] > max :
+        max = nums[i]
+
+
+
+for i in range(max +1):
+    nums_l.insert(i , -1)
+
+
+for i in range(max):
+
+    nums_l[nums[i] -1] = nums[i]
+print(nums_l)

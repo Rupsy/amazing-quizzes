@@ -1,0 +1,19 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        l = len(nums ) -1
+        map={}
+        for i in range(l):
+            if map.__contains__(nums[i]):
+                map[nums[i]] = map[nums[i]]  +1
+            else:
+                map[nums[i]] = 1
+
+        for k , v in map.items():
+            if v == 1 :
+                return k
+
+  

@@ -1,0 +1,32 @@
+import math
+
+print(abs(-1))
+words = ["practice", "makes", "perfect", "coding", "makes"]
+
+word1 = "coding"
+word2 = "makes"
+l1 = []
+l2 = []
+for i in range(len(words) ):
+    if words[i] == word1:
+        l1.append(i)
+    if words[i] == word2:
+        l2.append(i)
+
+ans = 0
+diff =0
+print(l1)
+print(l2)
+for i in range(len(l1)):
+    for r in range(len(l2)):
+        diff = abs(l1[i] - l2[r])
+        ans = min( abs(l1[i] - l2[r]) , diff)
+
+
+print(ans)
+
+
+
+
+
+

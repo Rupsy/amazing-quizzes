@@ -1,0 +1,15 @@
+arr = [-1,-1,1,2,-1,-4]
+arr.sort()
+print(" arr " , arr)
+new_arr= {}
+l = len (arr) -1
+for i in range( 0 , l) :
+    if new_arr.__contains__(arr[i]):
+        new_arr[arr[i]] = new_arr[arr[i]] + 1
+    else:
+        new_arr[arr[i]] = 1
+ans_arr=[]
+for key , val in new_arr.items():
+    ans_arr.append(key)
+
+print (ans_arr)

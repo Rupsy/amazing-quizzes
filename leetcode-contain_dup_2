@@ -1,0 +1,41 @@
+Problem : Contains Duplicate II
+Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array 
+such that nums[i] == nums[j] and abs(i - j) <= k.
+
+https://leetcode.com/problems/contains-duplicate-ii/
+
+Solution : 
+map = {}
+ls = []
+nums = [1,2,3,1]
+target = 3
+l = len(nums)
+for i in range(l):
+    print(nums[i])
+    if map.__contains__(nums[i]):
+        ls =  map[nums[i]]
+        print("ls" , ls +[i] , i)
+        map[nums[i]] = ls +[i]
+    else:
+        ls = [i]
+        map[nums[i]] = ls
+print(map)
+l = 0
+r = 0
+for k , v in map.items():
+    r = len(v) -1
+
+    if len(v) > 1:
+        print("r" , r)
+        print("v[r] - v[l]" ,v[r] , v[l] )
+        for i in v :
+            if v[r] - v[l] > target and  r > l:
+                print("r" , r)
+                r = r-1
+            elif v[r] - v[l] < target and l < r:
+                l = l + 1
+            else :
+                print ("kk" ,target)
+                break
+
+print("final " , k )

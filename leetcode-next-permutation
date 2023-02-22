@@ -1,0 +1,35 @@
+Problem : https://leetcode.com/problems/next-permutation/
+Example :
+Input: nums = [1,2,3]
+Output: [1,3,2]
+A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+For example, for arr = [1,2,3], the following are all the permutations of arr: [1,2,3], [1,3,2], [2, 1, 3], [2, 3, 1], [3,1,2], [3,2,1].
+
+Solution: 
+
+import sys
+
+nums = [1,1,5]
+l  = len(nums)
+
+list_1 = []
+point_of_inc = 0
+for i in range(l-1):
+    if nums[i+1] > nums[i]:
+        point_of_inc = i +1
+
+        toSwap = nums[point_of_inc -1 ]
+        min = sys.maxsize
+        temp = 0
+        for j in range (point_of_inc , l ):
+            if (nums[j] - toSwap > 0 and nums[j] - toSwap < min):
+                temp = nums[j]
+                nums[j] = nums[point_of_inc]
+                nums[point_of_inc] = temp
+
+        nums[point_of_inc:l].sort()
+    if point_of_inc == 0 :
+        nums.sort()
+
+print(nums)

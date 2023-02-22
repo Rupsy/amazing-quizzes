@@ -1,0 +1,23 @@
+input = [10,3,8,9,4]
+
+score = input.copy()
+
+score.sort(reverse=True)
+k_v = {}
+k_v[score[0]] = "Gold_medal"
+k_v[score[1]] = "Silver_medal"
+k_v[score[2]] = "Bronze_medal"
+rank = 4
+for i in range (3,len(input)  ):
+    k_v[score[i]] = rank
+    rank = rank + 1
+
+
+
+for i in range (len(input)  ) :
+    if k_v.__contains__(input[i]):
+        input[i] = k_v[ input[i]]
+
+print(input)
+
+

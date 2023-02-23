@@ -1,0 +1,18 @@
+Solution : 
+a=['ab','a'  , 'abd', 'abc']
+
+longest_eleme = ""
+
+a.sort(key=len , reverse=True)
+print(a)
+for element in a:
+    sub_ch = ""
+    for ch in element:
+        sub_ch += ch
+        if a.__contains__(sub_ch):
+            print (sub_ch)
+        else:
+            print( "Not present for" , sub_ch)
+            break
+    print(" chh ",element)
+    break

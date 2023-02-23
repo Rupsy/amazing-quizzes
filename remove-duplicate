@@ -1,0 +1,12 @@
+input = "much.very.program.this.like.i."
+
+print(input.rstrip("."))
+
+
+str = "Python is great and Java is also great"
+str_arr = str.split()
+str_set = set()
+for word in str_arr:
+    print(word)
+    str_set.add(word)
+print (str_set)

@@ -1,0 +1,9 @@
+str = "mohandas karamchand gandhi"
+str_arr =[]
+new=""
+str_arr = str.split( " ")
+for i in range(len(str_arr) -1):
+    new = new + str_arr[i][0].upper() + "."
+new = new + str_arr[len(str_arr)-1].title()
+print (new)
+    

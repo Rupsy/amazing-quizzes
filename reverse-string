@@ -1,0 +1,19 @@
+Problem : 
+
+#convert s
+from difflib import SequenceMatcher
+s5="zxabcdezy"
+s6="yzabcdezx"
+newStr = ""
+for i in range(len(s5)-1):
+    str=""
+
+    for j in range(len(s6)-1):
+        while s5[i] == s6[j]:
+            str += s6[j]
+            i +=1
+            j +=1
+
+        if len(str) > len(newStr):
+            newStr = str
+print (newStr)

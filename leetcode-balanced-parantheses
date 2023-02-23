@@ -1,0 +1,58 @@
+Problem : 
+https://leetcode.com/problems/valid-parentheses/
+
+Description: Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+
+Solution: 
+
+
+input = "much.very.program.this.like.i."
+stk = []
+print(input.rstrip("."))
+print(len(input))
+c = -1
+for i in range(len(input)):
+
+    if input[i] == '{' or input[i] == '[' or input[i] == '(':
+
+        stk.append(input[i])
+        c = c+ 1
+    elif input[i] == ']' :
+        if len(stk) > 0 :
+            if stk[c] == '[':
+                stk.pop(c)
+                c = c-1
+            else:
+                stk.append(input[i])
+                break
+        else:
+            stk.append(input[i])
+    elif input[i] == '}' :
+        if len(stk) > 0 :
+            if stk[c] == '{':
+                stk.pop(c)
+                c = c-1
+            else:
+                return False
+            stk.append(input[i])
+    elif input[i] == ')' :
+        if len(stk) > 0 :
+            if stk[c] == '(':
+                stk.pop(c)
+                c = c-1
+        else:
+            stk.append(input[i])
+
+if len(stk) == 0 :
+    print("valid " , stk)
+else:
+    print("invalid " , stk)
+
+
+

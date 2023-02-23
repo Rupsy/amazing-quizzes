@@ -1,0 +1,37 @@
+Problem Link : https://www.geeksforgeeks.org/find-the-first-repeated-character-in-a-string/
+Description : Given a string, find the first repeated character in it. We need to find the character 
+that occurs more than once and whose index of second occurrence is smallest. A variation of this question is discussed here.
+
+Solution: 
+
+vowel_letters = {'a', 'e', 'i', 'o', 'u'}
+vowel_letters.add('a')
+
+input = "Ravi had been saying that he had been there"
+
+inp_list = []
+
+inp_arr = input.split(" ")
+for i in inp_arr:
+
+    if inp_list.__contains__(i ):
+        print("First repeated " , i)
+    else:
+        inp_list.append(i)
+
+from collections import OrderedDict
+dict = OrderedDict()
+str = "geeksforgeeks"
+cnt=0
+for ch in str:
+    if dict.__contains__(ch):
+        dict[ch] = dict.get(ch) + 1
+    else:
+        dict.update({ch : 1})
+
+for k , v in dict.items():
+    if v ==1:
+        cnt = cnt + 1
+        if cnt == 3:
+            print(k)
+            break
